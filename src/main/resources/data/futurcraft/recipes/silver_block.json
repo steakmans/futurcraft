@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "futurcraft:silver_ingot"
+    }
+  },
+  "result": {
+    "item": "futurcraft:silver_block"
+  }
+}

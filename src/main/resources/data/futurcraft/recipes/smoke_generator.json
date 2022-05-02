@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "ARA",
+    "FFF"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "A": {
+      "item": "futurcraft:aluminum_ingot"
+    },
+    "R": {
+      "item": "futurcraft:silver_ingot"
+    },
+    "F": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "futurcraft:smoke_generator"
+  }
+}

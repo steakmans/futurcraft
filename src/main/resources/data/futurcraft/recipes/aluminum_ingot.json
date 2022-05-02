@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "futurcraft:aluminum_block"
+    }
+  },
+  "result": {
+    "item": "futurcraft:aluminum_ingot",
+    "count": 9
+  }
+}

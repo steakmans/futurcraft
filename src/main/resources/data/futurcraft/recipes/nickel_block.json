@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "futurcraft:nickel_ingot"
+    }
+  },
+  "result": {
+    "item": "futurcraft:nickel_block"
+  }
+}

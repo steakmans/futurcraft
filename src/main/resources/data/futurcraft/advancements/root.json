@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:copper_ingot"
+    },
+    "title": {
+      "translate": "advancements.futurcraft.civilisation.root.title"
+    },
+    "description": {
+      "translate": "advancements.futurcraft.civilisation.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "annouce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/stone_bricks.png"
+  },
+  "criteria": {
+    "copper_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft: copper_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "copper_ingot"
+    ]
+  ]
+}

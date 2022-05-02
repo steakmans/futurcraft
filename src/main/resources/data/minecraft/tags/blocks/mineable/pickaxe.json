@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "futurcraft:aluminum_ore",
+    "futurcraft:deepslate_aluminum_ore",
+    "futurcraft:silver_ore",
+    "futurcraft:deepslate_silver_ore",
+    "futurcraft:titanium_ore",
+    "futurcraft:deepslate_titanium_ore",
+    "futurcraft:cobalt_ore",
+    "futurcraft:deepslate_cobalt_ore",
+    "futurcraft:nickel_ore",
+    "futurcraft:deepslate_nickel_ore",
+    "futurcraft:titanium_block",
+    "futurcraft:aluminum_block",
+    "futurcraft:cobalt_block",
+    "futurcraft:nickel_block",
+    "futurcraft:silver_block"
+  ]
+}
