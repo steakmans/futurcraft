@@ -4,6 +4,7 @@ import fr.steakmans.futurcraft.blocks.tileentities.ModTileEntities;
 import fr.steakmans.futurcraft.blocks.tileentities.TileEntityFurnaceGenerator;
 import fr.steakmans.futurcraft.screen.container.FurnaceGeneratorContainer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -11,15 +12,20 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
@@ -28,10 +34,34 @@ import org.jetbrains.annotations.Nullable;
 
 public class BlockFurnaceGenerator extends Block implements EntityBlock{
 
+    public static final DirectionProperty HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
+
     public BlockFurnaceGenerator() {
         super(BlockBehaviour.Properties.of(Material.METAL).strength(3.0f, 4.0f));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(HORIZONTAL_FACING, Direction.NORTH));
     }
 
+    @Override
+    public BlockState mirror(BlockState state, Mirror mirrorIn) {
+        return state.rotate(mirrorIn.getRotation(state.getValue(HORIZONTAL_FACING)));
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, LevelAccessor level, BlockPos pos, Rotation direction) {
+        return state.setValue(HORIZONTAL_FACING, direction.rotate(state.getValue(HORIZONTAL_FACING)));
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(HORIZONTAL_FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(HORIZONTAL_FACING);
+    }
 
     @Nullable
     @Override
@@ -46,7 +76,8 @@ public class BlockFurnaceGenerator extends Block implements EntityBlock{
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player p, InteractionHand hand, BlockHitResult result) {
-        if(!level.isClientSide && level.getBlockEntity(pos) instanceof final TileEntityFurnaceGenerator generator) {
+        if(!level.isClientSide && level.getBlockEntity(pos) instanceof TileEntityFurnaceGenerator) {
+            final TileEntityFurnaceGenerator generator = (TileEntityFurnaceGenerator) level.getBlockEntity(pos);
             MenuProvider container = new SimpleMenuProvider(FurnaceGeneratorContainer.getServerContainer(generator, pos), TileEntityFurnaceGenerator.TITLE);
             NetworkHooks.openGui((ServerPlayer) p, container, pos);
             return InteractionResult.SUCCESS;

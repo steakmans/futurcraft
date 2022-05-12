@@ -21,9 +21,8 @@ import java.util.Optional;
 
 public class ItemBattery extends Item {
     public ItemBattery() {
-        super(new Item.Properties().tab(Main.TAB).durability(2000).defaultDurability(2000));
+        super(new Item.Properties().tab(Main.TAB).stacksTo(1));
     }
-
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity p, int p_41407_, boolean p_41408_) {
@@ -49,7 +48,7 @@ public class ItemBattery extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        CompoundTag tag = stack.getTag();
+        CompoundTag tag = stack.getOrCreateTag();
         int energy = tag.getInt("Energy");
         tooltip.add(new TextComponent(energy + "/" + tag.getInt("MaxEnergy") + "FE"));
     }

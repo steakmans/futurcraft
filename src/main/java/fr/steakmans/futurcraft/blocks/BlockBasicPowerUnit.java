@@ -48,7 +48,8 @@ public class BlockBasicPowerUnit extends Block implements EntityBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player p, InteractionHand hand, BlockHitResult result) {
-        if(!level.isClientSide && level.getBlockEntity(pos) instanceof final TileEntityBasicPowerUnit generator) {
+        if(!level.isClientSide && level.getBlockEntity(pos) instanceof TileEntityBasicPowerUnit) {
+            final TileEntityBasicPowerUnit generator = (TileEntityBasicPowerUnit) level.getBlockEntity(pos);
             MenuProvider container = new SimpleMenuProvider(BasicPowerUnitContainer.getServerContainer(generator, pos), TileEntityBasicPowerUnit.TITLE);
             NetworkHooks.openGui((ServerPlayer) p, container, pos);
             return InteractionResult.SUCCESS;
@@ -59,7 +60,7 @@ public class BlockBasicPowerUnit extends Block implements EntityBlock {
 
     @Override
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-        TileEntityFurnaceGenerator be = (TileEntityFurnaceGenerator) level.getBlockEntity(pos);
+        TileEntityBasicPowerUnit be = (TileEntityBasicPowerUnit) level.getBlockEntity(pos);
         if(!be.getItemInSlot(0).isEmpty()) {
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), be.getItemInSlot(0)));
         }

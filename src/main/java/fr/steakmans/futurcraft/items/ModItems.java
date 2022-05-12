@@ -26,4 +26,7 @@ public class ModItems {
 
     //machine component
     public static final RegistryObject<Item> BATTERY = ITEMS.register("battery", ItemBattery::new);
+
+    //grenades
+    public static final RegistryObject<Item> INCENDIARY_GRENADE = ITEMS.register("incendiary_greanade", IncendiaryGreandeItem::new);
 }

@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "futurcraft:block/furnace_generator_top",
+    "down": "futurcraft:block/furnace_generator_down",
+    "north": "futurcraft:block/furnace_generator_north",
+    "south": "futurcraft:block/furnace_generator_back",
+    "west": "futurcraft:block/furnace_generator_side",
+    "east": "futurcraft:block/furnace_generator_side"
+  }
+}

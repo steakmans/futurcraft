@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "futurcraft:nickel_ore"
+  },
+  "result": "futurcraft:nickel_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

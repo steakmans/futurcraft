@@ -2,14 +2,19 @@ package fr.steakmans.futurcraft;
 
 import fr.steakmans.futurcraft.blocks.ModBlocks;
 import fr.steakmans.futurcraft.blocks.tileentities.ModTileEntities;
+import fr.steakmans.futurcraft.entity.ModEntities;
+import fr.steakmans.futurcraft.entity.explosion.renderer.IncendiaryTntRenderer;
 import fr.steakmans.futurcraft.items.ModItems;
 import fr.steakmans.futurcraft.oregen.OreFeature;
 import fr.steakmans.futurcraft.screen.BasicPowerUnitScreen;
+import fr.steakmans.futurcraft.screen.ElectricFurnaceScreen;
 import fr.steakmans.futurcraft.screen.FurnaceGeneratorScreen;
 import fr.steakmans.futurcraft.screen.container.ModContainers;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.core.Registry;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -37,7 +42,7 @@ public class Main {
         ModBlocks.BLOCKS.register(bus);
         ModTileEntities.TILE_ENTITIES.register(bus);
         ModContainers.CONTAINERS.register(bus);
-
+        ModEntities.ENTITIES.register(bus);
         MinecraftForge.EVENT_BUS.addListener(OreFeature::onBiomeLoadingEvent);
     }
 
@@ -50,6 +55,8 @@ public class Main {
     private void clientSetup(FMLClientSetupEvent e) {
         MenuScreens.register(ModContainers.FURNACE_GENERATOR.get(), FurnaceGeneratorScreen::new);
         MenuScreens.register(ModContainers.BASIC_POWER_UNIT.get(), BasicPowerUnitScreen::new);
+        MenuScreens.register(ModContainers.ELECTRIC_FURNACE.get(), ElectricFurnaceScreen::new);
+
     }
 
 }

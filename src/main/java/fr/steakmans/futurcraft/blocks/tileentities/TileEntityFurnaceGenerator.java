@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class TileEntityFurnaceGenerator extends InventoryBlockEntity{
 
-    public static final Component TITLE = new TranslatableComponent("container." + Main.MODID + ".smoke_generator");
+    public static final Component TITLE = new TranslatableComponent("container." + Main.MODID + ".furnace_generator");
 
     public final CustomEnergyStorage energyStorage;
 

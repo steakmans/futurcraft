@@ -12,5 +12,6 @@ public class ModContainers {
 
     public static final RegistryObject<MenuType<FurnaceGeneratorContainer>> FURNACE_GENERATOR = CONTAINERS.register("furnace_generator", () -> new MenuType<>(FurnaceGeneratorContainer::new));
     public static final RegistryObject<MenuType<BasicPowerUnitContainer>> BASIC_POWER_UNIT = CONTAINERS.register("basic_power_unit", () -> new MenuType<>(BasicPowerUnitContainer::new));
+    public static final RegistryObject<MenuType<ElectricFurnaceContainer>> ELECTRIC_FURNACE = CONTAINERS.register("electric_furnace", () -> new MenuType<>(ElectricFurnaceContainer::new));
 
 }
