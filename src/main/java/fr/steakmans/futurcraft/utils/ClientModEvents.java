@@ -3,6 +3,7 @@ package fr.steakmans.futurcraft.utils;
 import fr.steakmans.futurcraft.Main;
 import fr.steakmans.futurcraft.entity.ModEntities;
 import fr.steakmans.futurcraft.entity.explosion.IncendiaryPrimedTnt;
+import fr.steakmans.futurcraft.entity.explosion.renderer.BasicGrenadeRenderer;
 import fr.steakmans.futurcraft.entity.explosion.renderer.IncendiaryGrenadeRenderer;
 import fr.steakmans.futurcraft.entity.explosion.renderer.IncendiaryTntRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -25,6 +26,7 @@ public class ClientModEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers e) {
         e.registerEntityRenderer(ModEntities.PRIMED_INCENDIARY_TNT.get(), IncendiaryTntRenderer::new);
         e.registerEntityRenderer(ModEntities.INCENDIARY_GRENADE.get(), IncendiaryGrenadeRenderer::new);
+        e.registerEntityRenderer(ModEntities.BASIC_GRENADE.get(), BasicGrenadeRenderer::new);
     }
 
 }

@@ -29,4 +29,5 @@ public class ModItems {
 
     //grenades
     public static final RegistryObject<Item> INCENDIARY_GRENADE = ITEMS.register("incendiary_greanade", IncendiaryGreandeItem::new);
+    public static final RegistryObject<Item> BASIC_GRENADE = ITEMS.register("basic_grenade", BasicGreandeItem::new);
 }
