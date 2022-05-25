@@ -1,6 +1,8 @@
 package fr.steakmans.futurcraft.items;
 
 import fr.steakmans.futurcraft.Main;
+import fr.steakmans.futurcraft.fluids.ModFluids;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -9,6 +11,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MODID);
+
+    //base items
+    public static final RegistryObject<Item> PETROL_BUCKET = ITEMS.register("petrol_bucket", () -> new BucketItem(ModFluids.PETROL_FLUID, new Item.Properties().tab(Main.TAB).stacksTo(1)));
 
     //ores
     public static final RegistryObject<Item> ALUMINUM_INGOT = ITEMS.register("aluminum_ingot", () -> new Item(new Item.Properties().tab(Main.TAB)));
@@ -30,4 +35,8 @@ public class ModItems {
     //grenades
     public static final RegistryObject<Item> INCENDIARY_GRENADE = ITEMS.register("incendiary_greanade", IncendiaryGreandeItem::new);
     public static final RegistryObject<Item> BASIC_GRENADE = ITEMS.register("basic_grenade", BasicGreandeItem::new);
+
+    //missiles
+    public static final RegistryObject<Item> BASIC_MISSILE = ITEMS.register("basic_missile", () -> new MissileItem(new Item.Properties().tab(Main.TAB).stacksTo(1)));
+
 }

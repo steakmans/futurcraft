@@ -1,5 +1,6 @@
 package fr.steakmans.futurcraft.utils;
 
+import fr.steakmans.futurcraft.blocks.tileentities.TileEntityRocketConstructor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -36,6 +37,7 @@ public class InventoryBlockEntity extends BlockEntity {
         this.inventory = createInventory();
         this.handler = LazyOptional.of(() -> this.inventory);
     }
+
 
     private ItemStackHandler createInventory() {
         return new ItemStackHandler(this.size) {

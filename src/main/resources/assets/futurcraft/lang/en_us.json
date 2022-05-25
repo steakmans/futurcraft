@@ -21,6 +21,6 @@
   "block.futurcraft.deepslate_titanium_ore": "Deepslate titanium ore",
   "block.futurcraft.deepslate_cobalt_ore": "Deepslate cobalt ore",
   "block.futurcraft.deepslate_nickel_ore": "Deepslate nickel ore",
-  "advancements.futurcraft.civilisation.root.title": "The copper age",
-  "advancements.futurcraft.civilisation.root.description": "Smelt a copper ingot."
+  "advancements.futurcraft.root.title": "The copper age",
+  "advancements.futurcraft.root.description": "Smelt a copper ingot."
 }

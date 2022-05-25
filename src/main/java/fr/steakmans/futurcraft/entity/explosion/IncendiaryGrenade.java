@@ -20,7 +20,7 @@ public class IncendiaryGrenade extends IncendiaryPrimedTnt{
         super(p_32079_, p_32080_, p_32081_, p_32082_, p_32083_, ModEntities.INCENDIARY_GRENADE.get());
         Vec3 rot = new Vec3(rot1, rot2, rot3);
         this.setDeltaMovement(rot.multiply(0.9d, 0.015d, 0.9d));
-        this.setFuse(150);
+        this.setFuse(120);
     }
 
     @Override

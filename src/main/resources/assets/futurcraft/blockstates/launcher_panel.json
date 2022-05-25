@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "futurcraft:block/missile_launcher"
+    },
+    "facing=east": {
+      "model": "futurcraft:block/missile_launcher",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "futurcraft:block/missile_launcher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "futurcraft:block/missile_launcher",
+      "y": 270
+    }
+  }
+}

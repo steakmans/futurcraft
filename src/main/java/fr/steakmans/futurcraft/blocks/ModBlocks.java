@@ -2,6 +2,7 @@ package fr.steakmans.futurcraft.blocks;
 
 import fr.steakmans.futurcraft.Main;
 import fr.steakmans.futurcraft.blocks.explosion.IncendiaryTnt;
+import fr.steakmans.futurcraft.blocks.explosion.NuclearTnt;
 import fr.steakmans.futurcraft.items.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -40,9 +41,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> FURNACE_GENERATOR = createBlock("furnace_generator", BlockFurnaceGenerator::new);
     public static final RegistryObject<Block> BASIC_POWER_UNIT = createBlock("basic_power_unit", BlockBasicPowerUnit::new);
     public static final RegistryObject<Block> ELECTRIC_FURNACE = createBlock("electric_furnace", BlockElectricFurnace::new);
+    public static final RegistryObject<Block> LAUNCHER_PANEL = createBlock("launcher_panel", BlockLauncherPanel::new);
 
     //explosives
     public static final RegistryObject<Block> INCENDIARY_TNT = createBlock("incendiary_tnt", IncendiaryTnt::new);
+    public static final RegistryObject<Block> NUCLEAR_TNT = createBlock("nuclear_tnt", NuclearTnt::new);
+
 
     public static RegistryObject<Block> createBlock(String name, Supplier<? extends Block> supplier) {
         RegistryObject<Block> block = BLOCKS.register(name, supplier);

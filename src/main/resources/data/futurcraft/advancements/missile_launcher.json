@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "futurcraft:launcher_panel"
+    },
+    "title": {
+      "translate": "advancements.futurcraft.missile_launcher.title"
+    },
+    "description": {
+      "translate": "advancements.futurcraft.missile_launcher.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "launcher_panel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["futurcraft:launcher_panel"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "launcher_panel"
+    ]
+  ]
+}

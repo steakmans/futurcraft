@@ -186,17 +186,16 @@ public class IncendiaryPrimedTnt extends Entity {
     }
 
     private void setTnt(BlockPos pos, BlockState state) {
-        boolean stop = false;
         if(level.getBlockState(pos).isAir() && level.getBlockState(pos.below()).isAir() && !level.getBlockState(pos.below(2)).isAir()) {
-            int rand = level.random.nextInt(0, 32);
+            int rand = level.random.nextInt(0, 16);
             if(rand == 0) return;
             level.setBlock(pos.offset(0, -1, 0), state, 11);
         } else if(!level.getBlockState(pos).isAir() && level.getBlockState(pos.above()).isAir()) {
-            int rand = level.random.nextInt(0, 32);
+            int rand = level.random.nextInt(0, 16);
             if(rand == 0) return;
             level.setBlock(pos.offset(0, 1, 0), state, 11);
         } else if (level.getBlockState(pos).isAir() && !level.getBlockState(pos.below()).isAir()) {
-            int rand = level.random.nextInt(0, 32);
+            int rand = level.random.nextInt(0, 16);
             if(rand == 0) return;
             level.setBlock(pos, state, 11);
         }
