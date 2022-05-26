@@ -1,0 +1,15 @@
+{
+  "loader": "forge:obj",
+  "model": "futurcraft:textures/item/medium_missile.obj",
+  "flip-v": true,
+  "textures": {
+    "texture0": "futurcraft:item/medium_missile"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 75, 0, 45],
+      "translation": [ 4, -1.5, 0],
+      "scale": [ 0.005, 0.005, 0.005 ]
+    }
+  }
+}
