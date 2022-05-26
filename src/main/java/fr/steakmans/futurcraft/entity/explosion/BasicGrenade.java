@@ -1,5 +1,6 @@
 package fr.steakmans.futurcraft.entity.explosion;
 
+import fr.steakmans.futurcraft.entity.ModEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Explosion;
@@ -12,7 +13,7 @@ public class BasicGrenade extends IncendiaryGrenade{
     }
 
     public BasicGrenade(Level p_32079_, double p_32080_, double p_32081_, double p_32082_, @Nullable LivingEntity p_32083_, double rot1, double rot2, double rot3) {
-        super(p_32079_, p_32080_, p_32081_, p_32082_, p_32083_, rot1, rot2, rot3);
+        super(ModEntities.BASIC_GRENADE.get(), p_32079_, p_32080_, p_32081_, p_32082_, p_32083_, rot1, rot2, rot3);
     }
 
     @Override

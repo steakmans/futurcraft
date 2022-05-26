@@ -12,12 +12,14 @@ import org.jetbrains.annotations.Nullable;
 
 public class IncendiaryGrenade extends IncendiaryPrimedTnt{
 
+    private int x1 = 0, z1 = 0;
+
     public IncendiaryGrenade(EntityType<?> p_32076_, Level p_32077_) {
         super(p_32076_, p_32077_);
     }
 
-    public IncendiaryGrenade(Level p_32079_, double p_32080_, double p_32081_, double p_32082_, @Nullable LivingEntity p_32083_, double rot1, double rot2, double rot3) {
-        super(p_32079_, p_32080_, p_32081_, p_32082_, p_32083_, ModEntities.INCENDIARY_GRENADE.get());
+    public IncendiaryGrenade(EntityType<?> type, Level p_32079_, double p_32080_, double p_32081_, double p_32082_, @Nullable LivingEntity p_32083_, double rot1, double rot2, double rot3) {
+        super(p_32079_, p_32080_, p_32081_, p_32082_, p_32083_, type);
         Vec3 rot = new Vec3(rot1, rot2, rot3);
         this.setDeltaMovement(rot.multiply(0.9d, 0.015d, 0.9d));
         this.setFuse(120);

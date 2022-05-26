@@ -95,6 +95,7 @@ public class LauncherPanelScreen extends AbstractContainerScreen<LauncherPanelCo
             int targetY = Integer.parseInt(yPos.getValue());
             int targetZ = Integer.parseInt(zPos.getValue());
             int lock = Integer.parseInt(lockHeight.getValue());
+            if(lock < 100) lock = 100;
             ModPackets.NETWORK.sendToServer(new SpawnMissilePacket(new BlockPos(menu.data.get(4), menu.data.get(5), menu.data.get(6)), targetX, targetY, targetZ, lock));
         }));
     }

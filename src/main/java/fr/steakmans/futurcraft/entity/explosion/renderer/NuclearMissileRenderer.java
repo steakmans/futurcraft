@@ -15,17 +15,17 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class BasicMissileRenderer<Type extends BasicMissileEntity> extends EntityRenderer<BasicMissileEntity> {
+public class NuclearMissileRenderer<Type extends BasicMissileEntity> extends EntityRenderer<BasicMissileEntity> {
 
 
-    public BasicMissileRenderer(EntityRendererProvider.Context p_174008_) {
+    public NuclearMissileRenderer(EntityRendererProvider.Context p_174008_) {
         super(p_174008_);
     }
 
     @Override
     public void render(BasicMissileEntity entity, float p_116178_, float p_116179_, PoseStack stack, MultiBufferSource buf, int p_116182_) {
         BlockPos pos = new BlockPos(entity.getBlockX(), entity.getBlockY(), entity.getBlockZ());
-        Minecraft.getInstance().getItemRenderer().renderStatic(ModItems.BASIC_MISSILE.get().getDefaultInstance(), ItemTransforms.TransformType.HEAD, 0, this.getBlockLightLevel(entity, pos), stack, buf, 0);
+        Minecraft.getInstance().getItemRenderer().renderStatic(ModItems.NUCLEAR_MISSILE.get().getDefaultInstance(), ItemTransforms.TransformType.HEAD, 0, this.getBlockLightLevel(entity, pos), stack, buf, 0);
         super.render(entity, p_116178_, p_116179_, stack, buf, getBlockLightLevel(entity, entity.getOnPos()));
     }
 

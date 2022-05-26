@@ -1,7 +1,9 @@
 package fr.steakmans.futurcraft.packets;
 
 import fr.steakmans.futurcraft.blocks.tileentities.TileEntityLauncherPanel;
-import fr.steakmans.futurcraft.entity.BasicMissileEntity;
+import fr.steakmans.futurcraft.entity.ModEntities;
+import fr.steakmans.futurcraft.entity.explosion.BasicMissileEntity;
+import fr.steakmans.futurcraft.entity.explosion.NuclearMissileEntity;
 import fr.steakmans.futurcraft.utils.MissileIdEnum;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -9,7 +11,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.network.NetworkEvent;
 
-import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
@@ -51,7 +52,11 @@ public class SpawnMissilePacket {
                 be.extractItem(0);
                 Level level = ctx.get().getSender().getLevel();
                 if(missileId == MissileIdEnum.BASIC.getId()) {
-                    BasicMissileEntity entity = new BasicMissileEntity(level, be.getBlockPos().getX() + 0.5D, be.getBlockPos().getY() + 1d, be.getBlockPos().getZ() + 0.5D, ctx.get().getSender(), targetX, targetY, targetZ, lockHeight);
+                    BasicMissileEntity entity = new BasicMissileEntity(ModEntities.BASIC_MISSILE.get(), level, be.getBlockPos().getX() + 0.5D, be.getBlockPos().getY() + 1d, be.getBlockPos().getZ() + 0.5D, ctx.get().getSender(), targetX, targetY, targetZ, lockHeight);
+                    level.addFreshEntity(entity);
+                }
+                if(missileId == MissileIdEnum.NUCLEAR.getId()) {
+                    BasicMissileEntity entity = new NuclearMissileEntity(level, be.getBlockPos().getX() + 0.5D, be.getBlockPos().getY() + 1d, be.getBlockPos().getZ() + 0.5D, ctx.get().getSender(), targetX, targetY, targetZ, lockHeight);
                     level.addFreshEntity(entity);
                 }
             }

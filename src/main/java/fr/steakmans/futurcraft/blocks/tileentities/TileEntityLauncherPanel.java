@@ -65,6 +65,7 @@ public class TileEntityLauncherPanel extends InventoryBlockEntity {
     public void tick() {
         this.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING);
         if(getItemInSlot(0).is(ModItems.BASIC_MISSILE.get())) missileId = MissileIdEnum.BASIC.getId();
+        if(getItemInSlot(0).is(ModItems.NUCLEAR_MISSILE.get())) missileId = MissileIdEnum.NUCLEAR.getId();
         else missileId = -1;
         stack = getItemInSlot(0);
         getModelData().setData(MISSILE_ID,  "" + missileId);

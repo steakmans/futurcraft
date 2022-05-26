@@ -1,10 +1,7 @@
 package fr.steakmans.futurcraft.entity;
 
 import fr.steakmans.futurcraft.Main;
-import fr.steakmans.futurcraft.entity.explosion.BasicGrenade;
-import fr.steakmans.futurcraft.entity.explosion.IncendiaryGrenade;
-import fr.steakmans.futurcraft.entity.explosion.IncendiaryPrimedTnt;
-import fr.steakmans.futurcraft.entity.explosion.NuclearPrimedTnt;
+import fr.steakmans.futurcraft.entity.explosion.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -21,4 +18,5 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BasicGrenade>> BASIC_GRENADE = ENTITIES.register("basic_grenade", () -> EntityType.Builder.<BasicGrenade>of(BasicGrenade::new, MobCategory.MISC).build(new ResourceLocation(Main.MODID, "basic_grenade").toString()));
     public static final RegistryObject<EntityType<NuclearPrimedTnt>> NUCLEAR_PRIMED_TNT = ENTITIES.register("nuclear_primed_tnt", () -> EntityType.Builder.<NuclearPrimedTnt>of(NuclearPrimedTnt::new, MobCategory.MISC).build(new ResourceLocation(Main.MODID, "nuclear_primed_tnt").toString()));
     public static final RegistryObject<EntityType<BasicMissileEntity>> BASIC_MISSILE = ENTITIES.register("basic_missile", () -> EntityType.Builder.<BasicMissileEntity>of(BasicMissileEntity::new, MobCategory.MISC).build(new ResourceLocation(Main.MODID, "basic_missile").toString()));
+    public static final RegistryObject<EntityType<NuclearMissileEntity>> NUCLEAR_MISSILE = ENTITIES.register("nuclear_missile", () -> EntityType.Builder.<NuclearMissileEntity>of(NuclearMissileEntity::new, MobCategory.MISC).build(new ResourceLocation(Main.MODID, "nuclear_missile").toString()));
 }

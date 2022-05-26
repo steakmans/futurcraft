@@ -1,6 +1,7 @@
 package fr.steakmans.futurcraft.items;
 
 import fr.steakmans.futurcraft.Main;
+import fr.steakmans.futurcraft.entity.ModEntities;
 import fr.steakmans.futurcraft.entity.explosion.IncendiaryGrenade;
 import net.minecraft.client.gui.components.DebugScreenOverlay;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -23,7 +24,7 @@ public class IncendiaryGreandeItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player p, InteractionHand hand) {
         Vec3 rot = new Vec3(p.getLookAngle().x, 0 , p.getLookAngle().z);
-        IncendiaryGrenade grenade = new IncendiaryGrenade(level, p.getX(), p.getY() + 1.5f, p.getZ(),
+        IncendiaryGrenade grenade = new IncendiaryGrenade(ModEntities.INCENDIARY_GRENADE.get(), level, p.getX(), p.getY() + 1.5f, p.getZ(),
                 null, rot.x, -p.getXRot(), rot.z);
         level.addFreshEntity(grenade);
         return super.use(level, p, hand);
