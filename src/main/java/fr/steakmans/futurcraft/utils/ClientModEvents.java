@@ -21,6 +21,8 @@ public class ClientModEvents {
         e.registerEntityRenderer(ModEntities.NUCLEAR_PRIMED_TNT.get(), NuclearTntRenderer::new);
         e.registerEntityRenderer(ModEntities.BASIC_MISSILE.get(), BasicMissileRenderer::new);
         e.registerEntityRenderer(ModEntities.NUCLEAR_MISSILE.get(), NuclearMissileRenderer::new);
+        e.registerEntityRenderer(ModEntities.ANNIHILATION_MISSILE.get(), AnnihilationMissileRenderer::new);
+        e.registerEntityRenderer(ModEntities.ANNIHILATION_PRIMED_TNT.get(), AnnihilationTntRenderer::new);
 
         e.registerBlockEntityRenderer(ModTileEntities.LAUNCHER_PANEL_TILE_ENTITY.get(), LauncherPanelBER::new);
     }

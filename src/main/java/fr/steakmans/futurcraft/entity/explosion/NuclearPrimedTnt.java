@@ -1,6 +1,8 @@
 package fr.steakmans.futurcraft.entity.explosion;
 
 import fr.steakmans.futurcraft.Main;
+import fr.steakmans.futurcraft.packets.ModPackets;
+import fr.steakmans.futurcraft.packets.NuclearExplosionPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -88,15 +90,7 @@ public class NuclearPrimedTnt extends Entity {
     }
 
     protected void explode() {
-        this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 90f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() + 20, this.getY(0.0625D), this.getZ(), 90f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() - 20, this.getY(0.0625D), this.getZ(), 90f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ() + 20, 90f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() + 15, this.getY(0.0625D), this.getZ() + 15, 30f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() - 15, this.getY(0.0625D), this.getZ() + 15, 30f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ() - 20, 90f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() + 15, this.getY(0.0625D), this.getZ() - 15, 30f, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX() - 15, this.getY(0.0625D), this.getZ() - 15, 30f, Explosion.BlockInteraction.DESTROY);
+        ModPackets.NETWORK.sendToServer(new NuclearExplosionPacket(getX(), getY(), getZ()));
     }
 
 

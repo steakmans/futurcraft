@@ -1,6 +1,7 @@
 package fr.steakmans.futurcraft.blocks;
 
 import fr.steakmans.futurcraft.Main;
+import fr.steakmans.futurcraft.blocks.explosion.AnnihilationTnt;
 import fr.steakmans.futurcraft.blocks.explosion.IncendiaryTnt;
 import fr.steakmans.futurcraft.blocks.explosion.NuclearTnt;
 import fr.steakmans.futurcraft.items.ModItems;
@@ -46,7 +47,7 @@ public class ModBlocks {
     //explosives
     public static final RegistryObject<Block> INCENDIARY_TNT = createBlock("incendiary_tnt", IncendiaryTnt::new);
     public static final RegistryObject<Block> NUCLEAR_TNT = createBlock("nuclear_tnt", NuclearTnt::new);
-
+    public static final RegistryObject<Block> ANNIHILATION_TNT = createBlock("annihilation_missile", AnnihilationTnt::new);
 
     public static RegistryObject<Block> createBlock(String name, Supplier<? extends Block> supplier) {
         RegistryObject<Block> block = BLOCKS.register(name, supplier);

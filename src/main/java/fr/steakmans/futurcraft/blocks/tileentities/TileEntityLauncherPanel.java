@@ -33,13 +33,11 @@ public class TileEntityLauncherPanel extends InventoryBlockEntity {
     public final CustomEnergyStorage energyStorage;
     private int capacity = 10000, maxExtract = 0, maxReceive = 500;
     private LazyOptional<CustomEnergyStorage> energy;
-    private ItemStack stack;
 
     public TileEntityLauncherPanel(BlockPos pos, BlockState state) {
         super(ModTileEntities.LAUNCHER_PANEL_TILE_ENTITY.get(), pos, state, 2);
         this.energyStorage = createEnergyStorage();
         this.energy = LazyOptional.of(() -> this.energyStorage);
-        getModelData().setData(MISSILE_ID, "-1");
     }
 
     @Override
@@ -68,14 +66,6 @@ public class TileEntityLauncherPanel extends InventoryBlockEntity {
         else if(getItemInSlot(0).is(ModItems.NUCLEAR_MISSILE.get())) missileId = MissileIdEnum.NUCLEAR.getId();
         else if (getItemInSlot(0).is(ModItems.ANNIHILATION_MISSILE.get())) missileId = MissileIdEnum.ANNIHILATION.getId();
         else missileId = -1;
-        stack = getItemInSlot(0);
-        getModelData().setData(MISSILE_ID,  "" + missileId);
-    }
-
-
-
-    public ItemStack getStack() {
-        return stack;
     }
 
     public int isMissileSlotEmpty() {
@@ -102,8 +92,4 @@ public class TileEntityLauncherPanel extends InventoryBlockEntity {
         this.energyStorage.setEnergy(tag.getInt("Energy"));
     }
 
-    public int getMissileModel() {
-        int i = Integer.parseInt(getModelData().getData(MISSILE_ID));
-        return i;
-    }
 }
