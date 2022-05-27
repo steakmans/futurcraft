@@ -39,6 +39,7 @@ public class ModItems {
     //missiles
     public static final RegistryObject<Item> BASIC_MISSILE = ITEMS.register("basic_missile", () -> new MissileItem(new Item.Properties().tab(Main.TAB).stacksTo(1)));
     public static final RegistryObject<Item> NUCLEAR_MISSILE = ITEMS.register("nuclear_missile", () -> new MissileItem(new Item.Properties().tab(Main.TAB).stacksTo(1)));
+    public static final RegistryObject<Item> ANNIHILATION_MISSILE = ITEMS.register("annihilation_missile", () -> new MissileItem(new Item.Properties().tab(Main.TAB).stacksTo(1)));
 
 
 }

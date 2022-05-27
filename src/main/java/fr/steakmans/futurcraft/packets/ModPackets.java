@@ -17,7 +17,7 @@ public class ModPackets {
         NETWORK.messageBuilder(SpawnMissilePacket.class, index++, NetworkDirection.PLAY_TO_SERVER).encoder(SpawnMissilePacket::encode).decoder(SpawnMissilePacket::new).consumer(SpawnMissilePacket::handle).add();
         NETWORK.messageBuilder(BasicExplosionPacket.class, index++, NetworkDirection.PLAY_TO_SERVER).encoder(BasicExplosionPacket::encode).decoder(BasicExplosionPacket::new).consumer(BasicExplosionPacket::handle).add();
         NETWORK.messageBuilder(NuclearExplosionPacket.class, index++, NetworkDirection.PLAY_TO_SERVER).encoder(NuclearExplosionPacket::encode).decoder(NuclearExplosionPacket::new).consumer(NuclearExplosionPacket::handle).add();
-
+        NETWORK.messageBuilder(AnnihilationExplosionPacket.class, index++, NetworkDirection.LOGIN_TO_SERVER).encoder(AnnihilationExplosionPacket::encode).decoder(AnnihilationExplosionPacket::new).consumer(AnnihilationExplosionPacket::handle).add();
 
     }
 

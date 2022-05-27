@@ -2,6 +2,7 @@ package fr.steakmans.futurcraft.packets;
 
 import fr.steakmans.futurcraft.blocks.tileentities.TileEntityLauncherPanel;
 import fr.steakmans.futurcraft.entity.ModEntities;
+import fr.steakmans.futurcraft.entity.explosion.AnnihilationMissileEntity;
 import fr.steakmans.futurcraft.entity.explosion.BasicMissileEntity;
 import fr.steakmans.futurcraft.entity.explosion.NuclearMissileEntity;
 import fr.steakmans.futurcraft.utils.MissileIdEnum;
@@ -57,6 +58,10 @@ public class SpawnMissilePacket {
                 }
                 if(missileId == MissileIdEnum.NUCLEAR.getId()) {
                     BasicMissileEntity entity = new NuclearMissileEntity(level, be.getBlockPos().getX() + 0.5D, be.getBlockPos().getY() + 1d, be.getBlockPos().getZ() + 0.5D, ctx.get().getSender(), targetX, targetY, targetZ, lockHeight);
+                    level.addFreshEntity(entity);
+                }
+                if(missileId == MissileIdEnum.ANNIHILATION.getId()) {
+                    BasicMissileEntity entity = new AnnihilationMissileEntity(level, be.getBlockPos().getX() + 0.5D, be.getBlockPos().getY() + 1d, be.getBlockPos().getZ() + 0.5D, ctx.get().getSender(), targetX, targetY, targetZ, lockHeight);
                     level.addFreshEntity(entity);
                 }
             }

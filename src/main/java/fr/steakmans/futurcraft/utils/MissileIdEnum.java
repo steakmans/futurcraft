@@ -9,7 +9,8 @@ import javax.annotation.Nullable;
 public enum MissileIdEnum {
 
     BASIC(0, 1, ModItems.BASIC_MISSILE.get()),
-    NUCLEAR(1, 3, ModItems.NUCLEAR_MISSILE.get());
+    NUCLEAR(1, 3, ModItems.NUCLEAR_MISSILE.get()),
+    ANNIHILATION(2, 5, ModItems.ANNIHILATION_MISSILE.get());
 
     private final int id;
     private final int tier;
