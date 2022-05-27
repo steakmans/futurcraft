@@ -16,6 +16,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +28,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Main.MODID)
 public class Main {
+
+    public static final DamageSource ANNIHILATION_DAMAGE_SOURCE = new DamageSource("annihilation").bypassArmor().setExplosion().bypassMagic();
 
     public static final String MODID = "futurcraft";
     public static final CreativeModeTab TAB = new CreativeModeTab("futurcraft") {
